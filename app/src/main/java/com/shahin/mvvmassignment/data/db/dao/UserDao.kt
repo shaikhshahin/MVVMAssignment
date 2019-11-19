@@ -1,14 +1,12 @@
 package com.shahin.assignmentinfomvvm.data.db.database
 
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
-import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import androidx.room.Delete
-
+import com.shahin.assignmentinfomvvm.data.network.model.UserData
 
 
 /**
@@ -21,7 +19,7 @@ interface UserDao {
      fun getAll(): List<User>
 
     @Insert
-    fun insert(task: User)
+    fun insert(task: List<UserData>?)
 
     @Delete
     fun delete(task: User)

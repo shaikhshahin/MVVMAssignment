@@ -12,5 +12,5 @@ import com.shahin.assignmentinfomvvm.data.network.model.UserData
  */
 @Database(entities = [UserData::class], version = 1)
 abstract class UserDatabase : RoomDatabase() {
-    abstract fun taskDao(): UserDao
+    abstract fun userDao(): UserDao
 }
