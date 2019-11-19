@@ -56,12 +56,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:rules:1.0.1'
 
 
-    // for intent mocking
-    androidTestImplementation 'com.android.support.test.espresso:espresso-intents:3.0.1'
-
-    // for network testing to track idle state
-    androidTestImplementation 'com.android.support.test.espresso.idling:idling-concurrent:3.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-idling-resource:3.0.1'
 
 
 
@@ -114,10 +108,13 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-v4'
         exclude module: 'recyclerview-v7'
     }
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.1.0'
+    androidTestImplementation 'androidx.test:rules:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 
-// For espresso activity rule
-    androidTestImplementation "com.android.support.test:rules:1.0.2"
-    androidTestImplementation "com.android.support.test:runner:1.0.2"
+
+
+
 
 
 
