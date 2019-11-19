@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.shahin.assignmentinfomvvm.App
+import com.shahin.assignmentinfomvvm.data.db.database.User
 
 
 import com.shahin.assignmentinfomvvm.data.network.model.UserData
@@ -44,10 +45,6 @@ import retrofit2.Response
 
 
 
-
-
-
-
     internal fun loadUserDataLocal() {
         setIsLoading(true)
 
@@ -63,14 +60,6 @@ import retrofit2.Response
         //UserDatas.add(UserData(name, image, desc))
         //setUserDatas(UserDatas)
 
-
-        val UserList = App.getInstance()?.let { DatabaseClient.getInstance(it) }?.appDatabase
-
-            ?.userDao()
-            ?.getAll()
-
-
-        Log.e("List", UserList.toString())
 
 
 

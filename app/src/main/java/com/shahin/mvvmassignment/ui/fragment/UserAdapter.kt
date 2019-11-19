@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.bumptech.glide.Glide
 import com.shahin.assignmentinfomvvm.App
+import com.shahin.assignmentinfomvvm.data.db.database.User
 import com.shahin.assignmentinfomvvm.data.network.model.UserData
+import com.shahin.assignmentinfomvvm.utils.NetworkUtils
 import com.shahin.mvvmassignment.R
 import com.shahin.mvvmassignment.data.db.database.DatabaseClient
 
@@ -47,6 +49,14 @@ class UserAdapter(private val mListener: OnMovieAdapter) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val userData = getItem(position)
+
+        val UserList:List<User>? = App.getInstance()?.let { DatabaseClient.getInstance(it) }?.appDatabase
+
+            ?.userDao()
+            ?.getAll()
+
+
+        Log.e("List", UserList.toString())
 
 
         holder.setOnClickListener(userData)
