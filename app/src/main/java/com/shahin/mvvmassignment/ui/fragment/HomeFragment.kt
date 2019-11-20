@@ -26,6 +26,7 @@ import com.shahin.assignmentinfomvvm.ui.activity.details.DetailsActivity
 
 import butterknife.BindView
 import butterknife.ButterKnife
+import com.shahin.assignmentinfomvvm.utils.NetworkUtils
 import com.shahin.mvvmassignment.R
 
 /**
@@ -77,7 +78,7 @@ class HomeFragment : Fragment(), UserAdapter.OnMovieAdapter {
         activity?.let { viewModel.loadingStatus.observe(it, LoadingObserver()) }
         activity?.let { viewModel.userDatas.observe(it, UserObserver()) }
 
-        /*var networkStatus : Boolean = activity?.let { NetworkUtils.isNetworkConnected(it) }!!
+        var networkStatus : Boolean = activity?.let { NetworkUtils.isNetworkConnected(it) }!!
 
         if(networkStatus==true)
         {
@@ -85,8 +86,8 @@ class HomeFragment : Fragment(), UserAdapter.OnMovieAdapter {
         }
         else {
             viewModel.loadUserDataLocal()
-        }*/
-        viewModel.loadUserDatasNetwork()
+        }
+        //viewModel.loadUserDatasNetwork()
 
 
         userAdapter = UserAdapter(this)
